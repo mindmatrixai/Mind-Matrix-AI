@@ -1,0 +1,60 @@
+import time
+import random
+import hashlib
+import sys
+from rich.console import Console
+from rich.progress import track
+from rich.panel import Panel
+from rich.text import Text
+
+console = Console()
+
+def fancy_intro():
+    console.print(Panel.fit("[bold cyan]MIND MATRIX AI - BLOCKCHAIN VALIDATOR[/bold cyan]", style="bold magenta"))
+    time.sleep(1)
+    console.print("\n[green]Initializing AI-powered blockchain...\n", style="bold")
+    time.sleep(1)
+
+# Simulate blockchain transactions
+def generate_transaction():
+    return {
+        "sender": f"0x{random.randint(1000, 9999)}",
+        "receiver": f"0x{random.randint(1000, 9999)}",
+        "amount": round(random.uniform(0.01, 10), 2),
+        "hash": hashlib.sha256(str(random.randint(1, 1000000)).encode()).hexdigest()
+    }
+
+# AI-powered fraud detection
+def detect_rug_pull(transactions):
+    for tx in transactions:
+        if tx["amount"] > 8.5:
+            console.print(f"[bold red]🚨 Suspicious Transaction Detected![/bold red] Sender: {tx['sender']} Amount: {tx['amount']} SOL")
+            return True
+    return False
+
+# Simulate AI-powered validation
+def validate_block(transactions):
+    console.print("[yellow]Validating block transactions...🔍\n", style="bold")
+    for _ in track(range(10), description="[cyan]AI analyzing transactions..."):
+        time.sleep(0.3)
+    
+    if detect_rug_pull(transactions):
+        console.print("[bold red]❌ Block Rejected! Potential Rug Pull Detected![/bold red]\n")
+    else:
+        console.print("[bold green]✅ Block Successfully Validated! Mind Matrix Approved![/bold green]\n")
+    time.sleep(1)
+
+# AI-powered block creation
+def create_block():
+    console.print("[blue]Generating new AI-powered block...🏗️\n", style="bold")
+    transactions = [generate_transaction() for _ in range(5)]
+    validate_block(transactions)
+    console.print("[bold magenta]🔗 Block Added to the Chain![/bold magenta]\n")
+    time.sleep(1)
+
+# Main Execution
+if __name__ == "__main__":
+    fancy_intro()
+    for _ in range(5):
+        create_block()
+    console.print("[bold cyan]\n🚀 Mind Matrix AI - Blockchain Secured! 🚀\n")
