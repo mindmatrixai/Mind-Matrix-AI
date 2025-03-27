@@ -1,2 +1,62 @@
-*.rbc
-*.fyc
+.gitignore – Keeping Mind Matrix Clean & Secure 🚀
+Welcome to the Mind Matrix AI Blockchain Repository! 🧠🔗 To keep our codebase lightweight, secure, and efficient, we use a .gitignore file. This ensures that unnecessary files, sensitive data, and system-specific junk don’t get committed to our repo.
+
+Think of it as a firewall for your Git commits—only the essential code makes it in! 🛡️💡
+🔹 OS & Editor-Specific Files
+Avoid committing system-generated files that clutter your repo:
+
+graphql
+Copy
+Edit
+.DS_Store  # macOS metadata files  
+Thumbs.db  # Windows thumbnail cache  
+.idea/     # JetBrains (PyCharm, WebStorm) project files  
+.vscode/   # Visual Studio Code workspace settings  
+🔹 Python Dependencies & Virtual Environments
+Exclude installed packages and virtual environments to keep the repo clean:
+
+markdown
+Copy
+Edit
+venv/  
+__pycache__/  
+*.pyc  
+*.pyo  
+Pipfile.lock  
+🔹 Node.js & JavaScript Dependencies (if applicable)
+Prevent committing bulky node_modules/:
+
+pgsql
+Copy
+Edit
+node_modules/  
+package-lock.json  
+🔹 Environment & Security Files
+Sensitive credentials should NEVER be committed:
+
+pgsql
+Copy
+Edit
+.env  
+config.json  
+secrets.json  
+🔹 Logs & Debugging Files
+Logs should be ignored to prevent unnecessary commits:
+
+lua
+Copy
+Edit
+logs/  
+*.log  
+debug.log  
+🔹 Compiled & Build Files
+Exclude compiled binaries and temporary build artifacts:
+
+markdown
+Copy
+Edit
+dist/  
+build/  
+*.exe  
+*.dll  
+
